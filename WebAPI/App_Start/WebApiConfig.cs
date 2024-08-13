@@ -11,7 +11,7 @@ namespace RESTfulApi
             var cors = new EnableCorsAttribute("http://localhost:8080,http://localhost:3000,http://localhost:4200", "*", "*");
             config.EnableCors(cors);
 
-            // Web API configuration and services
+   \
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
