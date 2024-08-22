@@ -9,7 +9,7 @@ namespace RESTfulApi.Controllers
 {
     public class HomeController : ApiController
     {
-        // NOT PRODUCTION WORTHY
+        
         public static string dbConn = "Data Source=localhost; user id=appuser; password=app_password; initial catalog=app;";
 
         [HttpPost]
@@ -21,7 +21,7 @@ namespace RESTfulApi.Controllers
 
                 using (var cmd = conn.CreateCommand())
                 {
-                    // NOT PRODUCTION WORTHY
+                    
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "INSERT into person (FirstName, LastName) values ('" + member.FirstName + "', '" + member.LastName + "'); SELECT SCOPE_IDENTITY();";
                     return Convert.ToInt32(cmd.ExecuteScalar());
@@ -39,7 +39,6 @@ namespace RESTfulApi.Controllers
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    // NOT PRODUCTION WORTHY
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "SELECT * FROM Person";
                     using (var reader = cmd.ExecuteReader())
